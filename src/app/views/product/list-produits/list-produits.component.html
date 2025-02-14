@@ -1,0 +1,44 @@
+<body>
+    <header>
+        <h1>Boutique en Ligne</h1>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Rechercher un produit...">
+            <button>Rechercher</button>
+        </div>
+    </header>
+
+    <main>
+        <aside class="filters">
+            <h2>Filtres</h2>
+            <div class="filter-category">
+                <h3>Catégories</h3>
+                <label><input type="checkbox" name="category" value="electronics"> Électronique</label>
+                <label><input type="checkbox" name="category" value="clothing"> Vêtements</label>
+                <label><input type="checkbox" name="category" value="home"> Maison</label>
+                <label><input type="checkbox" name="category" value="sports"> Sports</label>
+            </div>
+            <div class="filter-price">
+                <h3>Prix</h3>
+                <label><input type="checkbox" name="price" value="0-50"> 0€ - 50€</label>
+                <label><input type="checkbox" name="price" value="50-100"> 50€ - 100€</label>
+                <label><input type="checkbox" name="price" value="100-200"> 100€ - 200€</label>
+                <label><input type="checkbox" name="price" value="200+"> 200€ et plus</label>
+            </div>
+        </aside>
+
+    
+            <section class="products">
+                <div class="product" *ngFor="let product of products">
+                    <img [src]="product.image" alt="{{ product.name }}" style="width: 200px;height: 150px;">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <p class="price">{{ product.price  }}</p>
+                </div>
+            </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Boutique en Ligne. Tous droits réservés.</p>
+    </footer>
+</body>
